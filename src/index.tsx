@@ -31,9 +31,9 @@ export default function App(): JSX.Element {
 
   const removeTodo = (index: number): void => {
     const newTodos = [...todos];
-    console.log("before", newTodos);
-    newTodos.splice(index - 1, 1);
-    console.log("after", newTodos);
+    newTodos.splice(index, 1);
+
+    setTodos(newTodos);
   };
   return (
     <>
@@ -64,7 +64,7 @@ export default function App(): JSX.Element {
                 type="button"
                 onClick={() => removeTodo(index)}
               >
-                Remove
+                x
               </button>
             </li>
           </Fragment>
